@@ -1,10 +1,8 @@
 :root {
   --bg: #0a0716;
-  --bg-soft: #1a0f2c;
   --fg: #ebe8f2;
   --fg-muted: #bdb6cc;
   --accent: #c4a7f7;
-  --accent-soft: rgba(196, 167, 247, 0.25);
   --border: #2e2440;
 }
 
@@ -23,7 +21,6 @@ body {
 
 body {
   background: var(--bg);
-  background-image: radial-gradient(ellipse at top, var(--bg-soft) 0%, var(--bg) 65%);
   color: var(--fg);
   font-family: VT323, "Courier New", monospace;
   font-size: clamp(1.15rem, 2.4vw, 1.4rem);
@@ -49,7 +46,6 @@ h1 {
   letter-spacing: 0.04em;
   line-height: 1.1;
   color: var(--fg);
-  text-shadow: 0 0 28px var(--accent-soft);
 }
 
 .video {
@@ -68,9 +64,9 @@ h1 {
 }
 
 blockquote {
+  width: 100%;
   font-size: clamp(1.4rem, 3.2vw, 1.85rem);
   color: var(--fg-muted);
-  max-width: 46rem;
   text-align: center;
 }
 
