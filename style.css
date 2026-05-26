@@ -1,10 +1,11 @@
 :root {
-  --bg: #0d0a08;
-  --bg-soft: #1a1410;
-  --fg: #e8d8b8;
-  --fg-muted: #8a7860;
-  --accent: #d97a3c;
-  --border: #2a1f17;
+  --bg: #0a0716;
+  --bg-soft: #1a0f2c;
+  --fg: #ebe8f2;
+  --fg-muted: #bdb6cc;
+  --accent: #c4a7f7;
+  --accent-soft: rgba(196, 167, 247, 0.25);
+  --border: #2e2440;
 }
 
 *,
@@ -24,15 +25,16 @@ body {
   background: var(--bg);
   background-image: radial-gradient(ellipse at top, var(--bg-soft) 0%, var(--bg) 65%);
   color: var(--fg);
-  font-family: Cinzel, Georgia, "Times New Roman", serif;
-  line-height: 1.6;
+  font-family: VT323, "Courier New", monospace;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 main {
-  max-width: 880px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(2.5rem, 6vw, 4.5rem) 1.25rem 3rem;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem) 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,11 +43,13 @@ main {
 }
 
 h1 {
-  font-weight: 700;
-  font-size: clamp(2.75rem, 9vw, 5.5rem);
-  letter-spacing: 0.18em;
+  font-family: "Press Start 2P", monospace;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 6.5vw, 3.75rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
   color: var(--fg);
-  text-shadow: 0 0 32px rgba(217, 122, 60, 0.22);
+  text-shadow: 0 0 28px var(--accent-soft);
 }
 
 .video {
@@ -64,13 +68,10 @@ h1 {
 }
 
 blockquote {
-  font-style: italic;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
   color: var(--fg-muted);
-  max-width: 40rem;
-  border-left: 2px solid var(--accent);
-  padding: 0.25rem 0 0.25rem 1.5rem;
-  text-align: left;
+  max-width: 46rem;
+  text-align: center;
 }
 
 blockquote p + p {
@@ -80,18 +81,28 @@ blockquote p + p {
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem 2rem;
+  gap: 1rem 2rem;
   justify-content: center;
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
+  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
 }
 
 .links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
   color: var(--fg-muted);
   text-decoration: none;
   padding: 0.25rem 0;
   border-bottom: 1px solid transparent;
   transition: color 160ms ease, border-color 160ms ease;
+}
+
+.icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+  fill: currentColor;
+  transform: translateY(-0.05em);
 }
 
 .links a:hover,
@@ -102,7 +113,7 @@ blockquote p + p {
 }
 
 @media (max-width: 600px) {
-  blockquote {
-    padding-left: 1rem;
+  .links {
+    gap: 0.75rem 1.5rem;
   }
 }
