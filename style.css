@@ -3,7 +3,10 @@
   --fg: #ebe8f2;
   --fg-muted: #bdb6cc;
   --accent: #c4a7f7;
+  --accent-rule: rgba(196, 167, 247, 0.38);
+  --notice-yellow: #e8c547;
   --border: #2e2440;
+  --text-inline-pad: clamp(2rem, 9vw, 6rem);
 }
 
 *,
@@ -23,7 +26,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: VT323, "Courier New", monospace;
-  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  font-size: clamp(1.45rem, 3.2vw, 1.9rem);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -46,6 +49,25 @@ h1 {
   letter-spacing: 0.04em;
   line-height: 1.1;
   color: var(--fg);
+  padding-inline: var(--text-inline-pad);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.section-rule {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-rule) 15%,
+    var(--accent-rule) 85%,
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(196, 167, 247, 0.12);
 }
 
 .video {
@@ -63,11 +85,25 @@ h1 {
   border: 0;
 }
 
+.dev-notice {
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.45;
+  color: var(--notice-yellow);
+  text-align: center;
+  padding-inline: var(--text-inline-pad);
+  box-sizing: border-box;
+}
+
 blockquote {
   width: 100%;
-  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+  font-family: inherit;
+  font-size: inherit;
   color: var(--fg-muted);
   text-align: center;
+  padding-inline: var(--text-inline-pad);
+  box-sizing: border-box;
 }
 
 blockquote p + p {
@@ -79,7 +115,11 @@ blockquote p + p {
   flex-wrap: wrap;
   gap: 1rem 2rem;
   justify-content: center;
-  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+  font-family: inherit;
+  font-size: inherit;
+  padding-inline: var(--text-inline-pad);
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .links a {
