@@ -96,6 +96,40 @@ h1 {
   box-sizing: border-box;
 }
 
+.demo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: var(--text-inline-pad);
+  box-sizing: border-box;
+}
+
+.demo-cta {
+  color: var(--bg);
+  background: var(--notice-yellow);
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em 1.1em;
+  border: 2px solid var(--notice-yellow);
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.demo-cta:hover,
+.demo-cta:focus-visible {
+  color: var(--bg);
+  background: var(--fg);
+  border-color: var(--fg);
+  outline: none;
+}
+
+.demo-note {
+  color: var(--fg-muted);
+  text-align: center;
+  max-width: 42ch;
+}
+
 blockquote {
   width: 100%;
   font-family: inherit;
@@ -108,6 +142,12 @@ blockquote {
 
 blockquote p + p {
   margin-top: 0.9rem;
+}
+
+.roadmap-line {
+  color: var(--fg-muted);
+  text-align: center;
+  max-width: 52ch;
 }
 
 .links {
