@@ -5,6 +5,7 @@
   --accent: #c4a7f7;
   --accent-rule: rgba(196, 167, 247, 0.38);
   --notice-yellow: #e8c547;
+  --notice-yellow-dark: #b8941f;
   --border: #2e2440;
   --text-inline-pad: clamp(2rem, 9vw, 6rem);
 }
@@ -107,20 +108,17 @@ h1 {
 }
 
 .demo-cta {
-  color: var(--bg);
-  background: var(--notice-yellow);
+  color: var(--notice-yellow);
   text-decoration: none;
   text-align: center;
-  padding: 0.5em 1.1em;
-  border: 2px solid var(--notice-yellow);
-  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
 }
 
 .demo-cta:hover,
 .demo-cta:focus-visible {
-  color: var(--bg);
-  background: var(--fg);
-  border-color: var(--fg);
+  color: var(--notice-yellow-dark);
+  border-bottom-color: var(--notice-yellow-dark);
   outline: none;
 }
 
@@ -128,6 +126,12 @@ h1 {
   color: var(--fg-muted);
   text-align: center;
   max-width: 42ch;
+}
+
+.demo .dev-notice {
+  margin-top: 1.5rem;
+  padding-inline: 0;
+  max-width: 60ch;
 }
 
 blockquote {
